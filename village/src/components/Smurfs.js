@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Smurf from './Smurf';
+import Smurf from "./Smurf";
+import styled from "styled-components";
 
+const SmurfsDiv = styled.div`
+  color: #fff;
+  background: url("https://www.topbestalternatives.com/wp-content/uploads/2017/11/smurfs-village.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+const SmurfH1 = styled.h1``;
 class Smurfs extends Component {
   render() {
     return (
-      <div className="Smurfs">
+      <SmurfsDiv className="Smurfs">
         <h1>Smurf Village</h1>
         <ul>
           {this.props.smurfs.map(smurf => {
@@ -20,13 +28,13 @@ class Smurfs extends Component {
             );
           })}
         </ul>
-      </div>
+      </SmurfsDiv>
     );
   }
 }
 
 Smurf.defaultProps = {
- smurfs: [],
+  smurfs: []
 };
 
 export default Smurfs;
