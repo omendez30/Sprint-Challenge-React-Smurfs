@@ -11,7 +11,6 @@ const StyledFormDiv = styled.div`
   height: 100%;
 `;
 const StyledForm = styled.form`
-  border: 1px solid red;
   margin: 0 auto;
   width: 50%;
 `;
