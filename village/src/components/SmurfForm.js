@@ -1,5 +1,30 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const StyledFormDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  border: 1px solid blue;
+  padding: 10%;
+  height: 100%;
+`;
+const StyledForm = styled.form`
+  border: 1px solid red;
+  margin: 0 auto;
+  width: 50%;
+`;
+const StyledInput = styled.input`
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 2em;
+  margin: 50px 10px;
+`;
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -35,21 +60,21 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
-          <input
+      <StyledFormDiv className="SmurfForm">
+        <StyledForm onSubmit={this.addSmurf}>
+          <StyledInput
             onChange={this.handleInputChange}
             placeholder="name"
             value={this.state.name}
             name="name"
           />
-          <input
+          <StyledInput
             onChange={this.handleInputChange}
             placeholder="age"
             value={this.state.age}
             name="age"
           />
-          <input
+          <StyledInput
             onChange={this.handleInputChange}
             placeholder="height"
             value={this.state.height}
@@ -58,8 +83,8 @@ class SmurfForm extends Component {
           <button type="submit" onClick={this.addSmurf}>
             Add to the village
           </button>
-        </form>
-      </div>
+        </StyledForm>
+      </StyledFormDiv>
     );
   }
 }
